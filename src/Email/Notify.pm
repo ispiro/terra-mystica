@@ -12,29 +12,37 @@ use Game::Constants;
 use Net::SMTP;
 use Util::SiteConfig;
 
-my $domain = "https://$config{domain}";
+use Email::Sender::Simple ('sendmail');
+use Email::Sender::Transport::SMTP;
+use Email::Simple;
+use Email::Simple::Creator;
+
+my $domain = "http://$config{domain}";
 
 sub notify_by_email {
     my ($game, $email, $subject, $body) = @_;
 
     return if !$body or !$subject or !$email;
 
-    my $smtp = Net::SMTP->new('localhost', ( Debug => 0 ));
-
-    $smtp->mail("www-data\@$config{email_domain}");
-    if (!$smtp->to($email)) {
-        print STDERR "Invalid email address $email\n";
-    } else {
-        $smtp->data();
-        $smtp->datasend("To: $email\n");
-        $smtp->datasend("From: TM Game Notification <noreply+notify-game-$game->{name}\@$config{email_domain}>\n");
-        $smtp->datasend("Subject: $subject\n");
-        $smtp->datasend("\n");
-        $smtp->datasend("$body\n");
-        $smtp->dataend();
-    }
-
-    $smtp->quit;
+    my $transport = Email::Sender::Transport::SMTP->new({
+        host => 'smtp.gmail.com',
+        port => '587',
+        ssl => 'starttls',
+        sasl_username => "$config{gmail_account}",
+        sasl_password => "$config{gmail_password}",
+        debug => 0,
+							});
+    
+    my $email = Email::Simple->create(
+        header => [
+            To => "$email",
+            From => "$config{gmail_account}",
+            Subject => "$subject",
+        ],
+        body => $body,
+	);
+    
+    sendmail($email, {transport => $transport});
 }
 
 sub notification_text_for_active {

@@ -91,7 +91,7 @@ method make_game($dbh, $q, $username) {
         } split /[\n\r]+/, $players;
     } elsif ($game_type eq 'public') {
         $player_count = $q->param('player-count');
-        if ($player_count < 2 or $player_count > 5) {
+        if ($player_count < 2 or $player_count > 7) {
             error "Invalid player count $player_count";
         }
         @players = ($username);

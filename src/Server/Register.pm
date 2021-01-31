@@ -11,6 +11,11 @@ extends 'Server::Server';
 use Crypt::Eksblowfish::Bcrypt qw(bcrypt en_base64);
 use Net::SMTP;
 
+use Email::Sender::Simple ('sendmail');
+use Email::Sender::Transport::SMTP;
+use Email::Simple;
+use Email::Simple::Creator;
+
 use Bytes::Random::Secure qw(random_bytes);
 use DB::Connection;
 use DB::Secret;
@@ -38,7 +43,7 @@ method handle($q, $suffix) {
 
 method request_registration($q, $dbh) {
     my @error = ();
-
+    
     my $username = $q->param('username');
     my $email = $q->param('email');
     my $password = $q->param('password1');
@@ -66,42 +71,40 @@ method request_registration($q, $dbh) {
             push @error, "Bad password: $reason\n";
         }
     }
-
+    
+    
     if (!@error) {
-        my $random = Bytes::Random::Secure->new(
-            Bits        => 512,
-            NonBlocking => 1,
-        );
-        my $salt = en_base64 $random->bytes(16);
-        my $hashed_password = bcrypt($password, 
-                                     '$2a$08$'.$salt);
-
         my $data = {
             username => $username,
             email => $email,
-            hashed_password => $hashed_password
+            hashed_password => $password
         };
+	
         my $token = insert_to_validate $dbh, $data;
+        my $url = sprintf "http://$config{domain}/app/register/validate/%s", $token;
 
-        my $url = sprintf "https://$config{domain}/app/register/validate/%s", $token;
+	    my $transport = Email::Sender::Transport::SMTP->new({
+            host => 'smtp.gmail.com',
+            port => '587',
+            ssl => 'starttls',
+            sasl_username => "$config{gmail_account}",
+            sasl_password => "$config{gmail_password}",
+            debug => 0,
+                                    });
 
-        my $smtp = Net::SMTP->new('localhost', ( Debug => 0 ));
 
-        $smtp->mail("www-data\@$config{email_domain}");
-        if (!$smtp->to($email)) {
-            push @error, "Invalid email address";
-        } else {
-            $smtp->data();
-            $smtp->datasend("To: $email\n");
-            $smtp->datasend("From: noreply+registration\@$config{email_domain}\n");
-            $smtp->datasend("Subject: Account activation for Terra Mystica\n");
-            $smtp->datasend("\n");
-            $smtp->datasend("To activate your account, use the following link:\n");
-            $smtp->datasend("  $url\n");
-            $smtp->dataend();
-        }
+	    my $message = "Validate new account for $username: $url. \nPlease note: Password is stored in cleartext.";
+	
+        my $email = Email::Simple->create(
+            header => [
+            To => "$email",
+            From => "$config{gmail_account}",
+            Subject => 'Account activation for Terra Mystica',
+            ],
+            body => $message,
+            );
 
-        $smtp->quit;
+	    sendmail($email, {transport => $transport});
     }
 
     $self->output_json({ error => [@error] });

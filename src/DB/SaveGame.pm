@@ -147,7 +147,7 @@ EOF
 
     my $prefix_content = "";
     if (defined $player_count) {
-        die "Invalid player-count '$player_count'\n" if $player_count < 2 or $player_count > 5;
+        die "Invalid player-count '$player_count'\n" if $player_count < 2 or $player_count > 7;
         $prefix_content = "player-count $player_count\n";
     }
 

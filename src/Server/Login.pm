@@ -37,7 +37,7 @@ method handle($q) {
     if (!$stored_password) {
         log_with_request $q, "login: invalid username for $form_username";
         $invalid_user = 1;
-    } elsif ($stored_password ne bcrypt($password, $stored_password)) {
+    } elsif ($stored_password ne $password) {
         log_with_request $q, "login: invalid password for $form_username";
     } else {
         # log_with_request $q, "login: ok for $form_username";

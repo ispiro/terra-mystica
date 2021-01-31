@@ -149,7 +149,7 @@ sub route {
         }
         if ($handler) {
             my $app = $handler->();
-            with_watchdog 15, sub {
+            with_watchdog 30, sub {
                 $app->handle($q, $suffix);
                 $ret = $app->output_psgi();
             };

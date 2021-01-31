@@ -19,7 +19,7 @@ function parseParamsFromPathname (pathname) {
 function loadGame (domain, pathname) {
     if (document.location.hash &&
         document.location.hash.match(/^#\/faction/)) {
-        document.location = "https://" + domain + document.location.hash.sub(/^#/, '');
+        document.location = "http://" + domain + document.location.hash.sub(/^#/, '');
     }
 
     parseParamsFromPathname(pathname);
@@ -57,7 +57,7 @@ function previewOrSave(save, preview_data, prefix_data, status_message) {
     }
 
     var target = save ? "/app/append-game/" : "/app/view-game/";
-    target = "https://" + backendDomain + target;
+    target = "http://" + backendDomain + target;
     if (!save) {
         spin();
     }
@@ -212,7 +212,7 @@ function loadOrSavePlan(save) {
     dataEntrySetStatus(true);
 
     var target = "/app/plan/";
-    target = "https://" + backendDomain + target;
+    target = "http://" + backendDomain + target;
 
     var form_params = {
         "cache-token": new Date() - Math.random(),
