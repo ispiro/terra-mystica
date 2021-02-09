@@ -1301,7 +1301,12 @@ sub command {
         my $selected_faction = lc $1;
         finalize_setup;
         $game{acting}->advance_state('select-factions');
-        setup_faction \%game, $selected_faction, $2, $3;
+
+        my $terrible_mode = '';
+        if ($game{options}{'terrible-chaos'}) {
+            $terrible_mode = 'chaos';
+        }
+        setup_faction \%game, $selected_faction, $2, $3, $terrible_mode;
         $game{events}->global_event("faction-count", 1);
 
         my $faction = $game{acting}->get_faction($selected_faction);
@@ -1364,6 +1369,7 @@ sub command {
 
         my $opt = lc $1;
         my %valid_options = map { ($_, 1) } qw(
+            terrible-chaos
             errata-cultist-power
             mini-expansion-1
             shipping-bonus

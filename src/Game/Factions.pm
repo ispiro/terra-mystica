@@ -10,6 +10,8 @@ use Method::Signatures::Simple;
 
 use Game::Constants;
 
+use vars qw(%game);
+
 sub clone {
     my $data = shift;
     my $ref = ref $data;
@@ -25,7 +27,7 @@ sub clone {
     }
 };
 
-func initialize_faction($game, $faction_name) {
+func initialize_faction($game, $faction_name, $mode) {
     my $faction;
 
     for my $variant (@{$game->{faction_variants}}) {
@@ -66,10 +68,24 @@ func initialize_faction($game, $faction_name) {
     $buildings->{TE}{max_level} = 3;
     $buildings->{SA}{max_level} = 1;
 
-    for (0..2) {
-        $buildings->{TE}{advance_gain}[$_]{GAIN_FAVOR} ||= 1;
+    my $fav = 1;
+
+    if ($mode eq 'chaos') {
+        $fav = 2;
     }
-    $buildings->{SA}{advance_gain}[0]{GAIN_FAVOR} ||= 1;
+
+    for (0..2) {
+        $buildings->{TE}{advance_gain}[$_]{GAIN_FAVOR} ||= $fav;
+    }
+    $buildings->{SA}{advance_gain}[0]{GAIN_FAVOR} ||= $fav;
+     
+    # else {
+
+    #     for (0..2) {
+    #         $buildings->{TE}{advance_gain}[$_]{GAIN_FAVOR} ||= 1;
+        
+    #     $buildings->{SA}{advance_gain}[0]{GAIN_FAVOR} ||= 1;
+    # }
 
     for my $building (values %{$buildings}) {
         $building->{level} = 0;
@@ -115,10 +131,10 @@ func factions_conflict($faction, $other) {
     return 0;
 }
 
-func setup_faction($game, $faction_name, $player, $email) {
+func setup_faction($game, $faction_name, $player, $email, $mode) {
     my $acting = $game->{acting};
 
-    my $faction = initialize_faction($game, $faction_name);
+    my $faction = initialize_faction($game, $faction_name, $mode);
     my $player_record = {};
     my $players = $acting->players();
     if (@{$players}) {
