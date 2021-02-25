@@ -35,6 +35,7 @@ the letters A-Z and a-z and the digits 0-9.
       <td>
         <input name="game-options" type="checkbox" id="option-terrible-chaos" value="terrible-chaos"></input><label for="option-terrible-chaos">Double favor mode</label><br>
         <input name="game-options" type="checkbox" id="option-mini-expansion-1" value="mini-expansion-1"></input><label for="option-mini-expansion-1">Mini Expansion #1 (town tiles)</label><br>
+        <input name="game-options" type="checkbox" id="option-terrible-expansion-1" value="terrible-expansion-1"></input><label for="option-terrible-expansion-1">Terrible Expansion #1</label><br>
         <input name="game-options" type="checkbox" id="option-shipping-bonus" value="shipping-bonus"></input><label for="option-shipping-bonus">Shipping bonus tile (Spielbox 6/2013)</label><br>
         <input name="game-options" type="checkbox" id="option-temple-scoring-tile" value="temple-scoring-tile"></input><label for="option-temple-scoring-tile">Temple round scoring tile (2015 mini expansion)</label><br>
         <input name="game-options" type="checkbox" id="option-fire-and-ice-final-scoring" value="fire-and-ice-final-scoring"></input><label for="option-fire-and-ice-final-scoring">Extra final scoring tile (Fire &amp; Ice expansion)</label><br>

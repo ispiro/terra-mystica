@@ -261,7 +261,7 @@ function loadOrSendChat(send) {
     dataEntrySetStatus(true);
 
     var target = "/app/chat/";
-    target = "https://" + backendDomain + target;
+    target = "http://" + backendDomain + target;
 
     var form_params = {
         "cache-token": new Date() - Math.random(),

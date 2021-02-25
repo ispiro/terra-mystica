@@ -139,6 +139,13 @@ Readonly our %tiles => init_tiles (
     BON10 => { income => { PW => 3 },
                pass_vp => { ship => [ map { $_ * 3 } 0..5 ] },
                option => 'shipping-bonus' },
+    BON11 => { income => { PW => 3 },
+               pass_vp => { ship => [ map { $_ * 3 } 0..5 ] },
+               option => 'shipping-bonus' },
+    BON12 => { income => { PW => 3 },
+               pass_vp => { ship => [ map { $_ * 3 } 0..5 ] },
+               option => 'shipping-bonus' },
+          
 
     FAV1 => { gain => { FIRE => 3 }, income => {}, count => 1 },
     FAV2 => { gain => { WATER => 3 }, income => {}, count => 1 },
@@ -244,39 +251,53 @@ Readonly our %colors => map { ($colors[$_], $_) } 0..$#colors;
 
 use Game::Factions::Acolytes;
 use Game::Factions::Alchemists;
+use Game::Factions::Alkies;
 use Game::Factions::Auren;
+use Game::Factions::Succubi;
 use Game::Factions::Chaosmagicians;
 use Game::Factions::Cultists;
 use Game::Factions::Darklings;
 use Game::Factions::Dragonlords;
 use Game::Factions::Dwarves;
+use Game::Factions::Neckbeards;
 use Game::Factions::Engineers;
 use Game::Factions::Fakirs;
+use Game::Factions::Fakers;
 use Game::Factions::Giants;
+use Game::Factions::Wastrels;
 use Game::Factions::Halflings;
+use Game::Factions::Hobbits;
 use Game::Factions::Icemaidens;
 use Game::Factions::Mermaids;
 use Game::Factions::Nomads;
 use Game::Factions::Riverwalkers;
 use Game::Factions::Shapeshifters;
 use Game::Factions::Swarmlings;
+use Game::Factions::Swimlings;
 use Game::Factions::Witches;
 use Game::Factions::Yetis;
 
 Readonly our %faction_setups => (
     alchemists => $Game::Factions::Alchemists::alchemists,
+    alkies => $Game::Factions::Alkies::alkies,
     auren => $Game::Factions::Auren::auren,
+    succubi => $Game::Factions::Succubi::succubi,
     chaosmagicians => $Game::Factions::Chaosmagicians::chaosmagicians,
     cultists => $Game::Factions::Cultists::cultists,
     darklings => $Game::Factions::Darklings::darklings,
     dwarves => $Game::Factions::Dwarves::dwarves,
+    neckbeards => $Game::Factions::Neckbeards::neckbeards,
     engineers => $Game::Factions::Engineers::engineers,
     fakirs => $Game::Factions::Fakirs::fakirs,
+    fakers => $Game::Factions::Fakers::fakers,
     giants => $Game::Factions::Giants::giants,
+    wastrels => $Game::Factions::Wastrels::wastrels,
     halflings => $Game::Factions::Halflings::halflings,
+    hobbits => $Game::Factions::Hobbits::hobbits,
     mermaids => $Game::Factions::Mermaids::mermaids,
     nomads => $Game::Factions::Nomads::nomads,
     swarmlings => $Game::Factions::Swarmlings::swarmlings,
+    swimlings => $Game::Factions::Swimlings::swimlings,
     witches => $Game::Factions::Witches::witches,
 );
 
@@ -374,18 +395,25 @@ Readonly our %vp_setups => (
         nomads => 19,
         witches => 19,
         dwarves => 20,
+        neckbeards => 20,
         halflings => 20,
+        hobbits => 20,
         icemaidens => 20,
         riverwalkers => 21,
         shapeshifters => 22,
         swarmlings => 22,
+        swimlings => 22,
         yetis => 22,
         acolytes => 23,
         dragonlords => 24,
         giants => 25,
+        wastrels => 25,
         alchemists => 27,
+        alkies => 27,
         auren => 27,
+        succubi => 27,
         fakirs => 33,
+        fakers => 33,
     }
 );
 

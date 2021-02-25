@@ -36,11 +36,12 @@ function makeHexPath(ctx, x, y, size) {
     
     ctx.beginPath();
     ctx.moveTo(x, y);
+    
     for (var i = 0; i < 6; i++) {
         ctx.lineTo(x, y); 
         angle += Math.PI / 3;
         x += Math.sin(angle) * size;
-        y += Math.cos(angle) * size;        
+        y += Math.cos(angle) * size;
     }
     ctx.closePath();
 }
@@ -2239,12 +2240,12 @@ function addFactionInput(parent, record, index) {
         var row = new Element("tr"); table.insert(row);
         var cell1 = new Element("td", {"valign": "top"}); row.insert(cell1);
         var cell2 = new Element("td", {"valign": "top"}); row.insert(cell2);
-        var boards = { "green": ["witches", "auren"],
-                       "blue": ["mermaids", "swarmlings" ],
-                       "black": ["darklings", "alchemists"],
+        var boards = { "green": ["witches", "succubi"],
+                       "blue": ["mermaids", "swarmlings"],
+                       "black": ["darklings","alkies"],
                        "brown": ["halflings", "cultists"], 
-                       "yellow": ["nomads", "fakirs"],
-                       "red": ["giants", "chaosmagicians"],
+                       "yellow": ["fakers", "nomads"],
+                       "red": ["chaosmagicians", "wastrels"],
                        "gray": ["dwarves", "engineers"],
                        "ice": ["icemaidens", "yetis"],
                        "volcano": ["dragonlords", "acolytes"],
@@ -2268,6 +2269,7 @@ function addFactionInput(parent, record, index) {
             if (board.key == "ice" || board.key == "volcano" || board.key == "variable") {
                 cell = cell2;
             }
+            
             var color_factions = board.value.sort();
             if (color_factions.size() == 0) {
                 var notAvailable = new Element("button").updateText(

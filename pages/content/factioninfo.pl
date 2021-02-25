@@ -21,6 +21,39 @@ details of the faction special powers, please read the
 <p>
 A note on <b>home terrain</b>: The concept of home terrain only applies to the original 14 factions from the base game and the shapeshifters. The other 5 expansion factions have a starting terrain but no home terrain.
 
+
+
+<h3>Terrible Factions</h3>
+
+<h4 id="alkies">Alkies</h4>
+<ul>
+<li>SH income is 5c, 2pw</li>
+<li>Start with 3/9/0 power</li>
+</ul>
+
+
+<h4 id="fakers">Fakers</h4>
+<ul>
+<li>Start with 1p</li>
+<li>Start with 5/7/0 power</li>
+<li>SH costs 8c</li>
+<li>Can upgrade digging twice</li>
+</ul>
+
+
+<h4 id="succubi">Succubi (Auren)</h4> 
+<ul>
+<li>SA costs 6c</li>
+<li>SH comes with 1p (not income)</li>
+<li>5vp per town</li>
+</ul>
+
+<h4 id="wastrels">Wastrels (Giants)</h4>
+<ul>
+<li>Faction power is ACTC</li>
+<li>SH produces 4pw and 1w income</li>
+</ul>
+
 <h3>Factions</h3>
 
 <h4 id="icemaidens">Ice Maidens</h4>

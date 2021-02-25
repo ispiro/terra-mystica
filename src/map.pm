@@ -514,6 +514,10 @@ sub transform_colors {
         return ($faction->{color}, undef);
     }
 
+    if ($faction->{name} eq 'wastrels') {
+        return ($faction->{color}, undef);
+    }
+
     my $spades = $faction->{SPADE};
     return ($current_color, $current_color) if !$spades;
 
@@ -610,6 +614,10 @@ sub transform_cost {
     }
 
     if ($faction->{name} eq 'giants' and $color_difference != 0) {
+        $color_difference = 2;
+    }
+
+    if (($faction->{name} eq 'wastrels' and $color_difference != 0)) {
         $color_difference = 2;
     }
 

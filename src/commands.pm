@@ -1372,6 +1372,7 @@ sub command {
             terrible-chaos
             errata-cultist-power
             mini-expansion-1
+            terrible-expansion-1
             shipping-bonus
             temple-scoring-tile
             fire-and-ice-final-scoring

@@ -114,6 +114,7 @@ sub deploy_cgi {
                   Game/Factions/Dwarves.pm
                   Game/Factions/Engineers.pm
                   Game/Factions/Fakirs.pm
+                  Game/Factions/Fakers.pm
                   Game/Factions/Giants.pm
                   Game/Factions/Halflings.pm
                   Game/Factions/Icemaidens.pm
