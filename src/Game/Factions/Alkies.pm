@@ -40,7 +40,7 @@ Readonly our $alkies => {
                 income => { P => [ 0, 1, 2, 3 ] } },
         SH => { advance_cost => { W => 4, C => 6 },
                 advance_gain => [ { PW => 12 } ],
-                income => { C => [ 0, 5 ], PW => [ 0, 2 ] } },
+                income => { C => [ 0, 4 ], PW => [ 0, 4 ] } },
         SA => { advance_cost => { W => 4, C => 6 },
                 income => { P => [ 0, 1 ] } },
     }

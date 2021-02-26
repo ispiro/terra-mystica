@@ -27,7 +27,7 @@ A note on <b>home terrain</b>: The concept of home terrain only applies to the o
 
 <h4 id="alkies">Alkies</h4>
 <ul>
-<li>SH income is 5c, 2pw</li>
+<li>SH income is 4c, 4pw</li>
 <li>Start with 3/9/0 power</li>
 </ul>
 
