@@ -100,6 +100,8 @@ Readonly our %actions => (
                gain => { PICK_COLOR => 1 } },
     BON1 => { cost => {}, gain => { SPADE => 1 },
               subaction => { dig => 1, 'transform' => 1, 'build' => 1 } },
+    BON12 => { cost => {}, gain => { SPADE => 1 },
+              subaction => { dig => 1, 'transform' => 1, 'build' => 1 } },
     BON2 => { cost => {}, gain => { CULT => 1 } },
     FAV6 => { cost => {}, gain => { CULT => 1 } },
 );
@@ -141,10 +143,9 @@ Readonly our %tiles => init_tiles (
                option => 'shipping-bonus' },
     BON11 => { income => { PW => 3 },
                pass_vp => { ship => [ map { $_ * 3 } 0..5 ] },
-               option => 'shipping-bonus' },
-    BON12 => { income => { PW => 3 },
-               pass_vp => { ship => [ map { $_ * 3 } 0..5 ] },
-               option => 'shipping-bonus' },
+               option => 'terrible-expansion-1' },
+    BON12 => { income => { C => 2 } ,
+               option => 'terrible-expansion-1' },
           
 
     FAV1 => { gain => { FIRE => 3 }, income => {}, count => 1 },
