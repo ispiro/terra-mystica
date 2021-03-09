@@ -29,6 +29,7 @@ A note on <b>home terrain</b>: The concept of home terrain only applies to the o
 <ul>
 <li>SH income is 4c, 4pw</li>
 <li>Start with 3/9/0 power</li>
+<li>Bloodstone converts 1vp to 2c. Standard 3c to 1vp applies.</li>
 </ul>
 
 

@@ -27,8 +27,7 @@ Readonly our $alkies => {
         mode => 'gain',
     },
     exchange_rates => {
-        C => { VP => 2 },
-        VP => { C => 1 }
+        VP => { C => .5 }
     },
     buildings => {
         D => { advance_cost => { W => 1, C => 2 },

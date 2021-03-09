@@ -141,12 +141,6 @@ Readonly our %tiles => init_tiles (
     BON10 => { income => { PW => 3 },
                pass_vp => { ship => [ map { $_ * 3 } 0..5 ] },
                option => 'shipping-bonus' },
-    BON11 => { income => { PW => 3 },
-               pass_vp => { ship => [ map { $_ * 3 } 0..5 ] },
-               option => 'terrible-expansion-1' },
-    BON12 => { income => { C => 2 } ,
-               option => 'terrible-expansion-1' },
-          
 
     FAV1 => { gain => { FIRE => 3 }, income => {}, count => 1 },
     FAV2 => { gain => { WATER => 3 }, income => {}, count => 1 },
