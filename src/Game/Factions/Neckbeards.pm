@@ -7,7 +7,6 @@ Readonly our $neckbeards => {
     C => 15, W => 3, P1 => 5, P2 => 7,
     EARTH => 2, color => 'gray',
     display => "Neckbeards",
-    faction_board_id => 7,
     ship => { 
         level => 0, max_level => 0,
     },
@@ -18,7 +17,7 @@ Readonly our $neckbeards => {
         gain => [ { VP => 4 }, { VP => 4 } ],
     },
     tunnel_range => 1,
-    tunnel_max_range => 1,
+    tunnel_max_range => 3,
     dig => {
         level => 0, max_level => 2,
         cost => [ { W => 3 }, { W => 2 }, { W => 1 } ],

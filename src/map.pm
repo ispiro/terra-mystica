@@ -257,7 +257,9 @@ sub check_reachable {
         my $level = $t->{level};
         my $type = $t->{type};
         my $range = $faction->{"${type}_range"};
-
+        if ($faction->{BON4}) {
+            $range = $range + 1;
+        }
         # XXX: shouldn't do payment here.
         for my $loc (@{$faction->{locations}}) {
             if (exists $map{$where}{range}{0}{$loc} and 

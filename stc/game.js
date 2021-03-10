@@ -1269,6 +1269,10 @@ function drawRealFaction(faction, board) {
         levels.insertTextSpan("range " + range);
         levels.insertTextSpan("/" + max_range,
                               'faction-info-unimportant');
+
+        if (faction.BON4 > 0) {
+            levels.insertTextSpan("(+1)", faction.passed ? 'faction-info-not-applicable' : '');
+        }
     }
 
     if (faction.ship.max_level > 0) {

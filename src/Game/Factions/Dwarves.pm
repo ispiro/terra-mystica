@@ -18,7 +18,7 @@ Readonly our $dwarves => {
         gain => [ { VP => 4 }, { VP => 4 } ],
     },
     tunnel_range => 1,
-    tunnel_max_range => 1,
+    tunnel_max_range => 3,
     dig => {
         level => 0, max_level => 2,
         cost => [ { W => 3 }, { W => 2 }, { W => 1 } ],

@@ -59,6 +59,7 @@ sub setup_pool {
         ALLOW_SHAPESHIFT => 100,
         GAIN_P3_FOR_VP => 10000,
         carpet_range => 3,
+        tunnel_range => 2,
     };
 
     $game{pool}{"ACT$_"}++ for 1..6;

@@ -151,7 +151,7 @@ sub finalize {
         $map{$key} = $game{bonus_coins}{$key};
     }
 
-    for (qw(BRIDGE TOWN_SIZE GAIN_ACTION TF_NEED_HEX_ADJACENCY carpet_range
+    for (qw(BRIDGE TOWN_SIZE GAIN_ACTION TF_NEED_HEX_ADJACENCY carpet_range tunnel_range
             LOSE_CULT LOSE_PW_TOKEN VOLCANO_TF CULTS_ON_SAME_TRACK)) {
         delete $game{pool}{$_};
     }

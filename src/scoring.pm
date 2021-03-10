@@ -1,6 +1,6 @@
 package terra_mystica;
 
-use strict;
+#use strict;
 
 use vars qw(%game %map);
 
@@ -145,6 +145,13 @@ sub do_pass_vp {
             for my $type (keys %{$pass_vp}) {
                 my $level = $faction->{buildings}{$type}{level} //
                     $faction->{$type}{level};
+                if ($type eq 'range') {
+                    if ($faction->{tunnel_range}) {
+                        $level = $faction->{tunnel_range};
+                    } elsif($faction->{carpet_range}) {
+                        $level = $faction->{carpet_range};
+                    }
+                }
                 $fun->($pass_vp->{$type}[$level], $_);
             }
         }

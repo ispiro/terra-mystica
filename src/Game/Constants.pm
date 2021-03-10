@@ -129,7 +129,7 @@ Readonly our %tiles => init_tiles (
     BON1 => { income => { C => 2 } },
     BON2 => { income => { C => 4 } },
     BON3 => { income => { C => 6 } },
-    BON4 => { income => { PW => 3 }, special => { ship => 1 } },
+    BON4 => { income => { PW => 3 }, special => { ship => 1, range => 1 } },
     BON5 => { income => { PW => 3, W => 1 } },
     BON6 => { income => { W => 2 },
               pass_vp => { SA => [0, 4], SH => [0, 4] } },
@@ -139,7 +139,7 @@ Readonly our %tiles => init_tiles (
     BON9 => { income => { C => 2 },
               pass_vp => { D => [ map { $_ } 0..8 ] } },
     BON10 => { income => { PW => 3 },
-               pass_vp => { ship => [ map { $_ * 3 } 0..5 ] },
+               pass_vp => { ship => [ map { $_ * 3 } 0..5 ], range => [ map { $_ * 3 } 0..4 ]},
                option => 'shipping-bonus' },
 
     FAV1 => { gain => { FIRE => 3 }, income => {}, count => 1 },
@@ -220,9 +220,10 @@ Readonly our %tiles => init_tiles (
     TW4 => { gain => { KEY => 1, VP => 6, PW => 8 } },
     TW5 => { gain => { KEY => 1, VP => 8, FIRE => 1, WATER => 1, EARTH => 1, AIR => 1 } },
     TW6 => { gain => { KEY => 2, VP => 2, FIRE => 2, WATER => 2, EARTH => 2, AIR => 2 }, count => 1, option => 'mini-expansion-1' },
-    TW7 => { gain => { KEY => 1, VP => 4, GAIN_SHIP => 1, carpet_range => 1 },
+    TW7 => { gain => { KEY => 1, VP => 4, GAIN_SHIP => 1, carpet_range => 1,  tunnel_range => 1 },
              option => 'mini-expansion-1' },
     TW8 => { gain => { KEY => 1, VP => 11 }, count => 1, option => 'mini-expansion-1' },
+
 );
 
 ## Initial game board
