@@ -25,15 +25,14 @@ A note on <b>home terrain</b>: The concept of home terrain only applies to the o
 
 <h3>Terrible Factions</h3>
 
-<h4 id="alkies">Alkies</h4>
+<h4 id="alkies">Alkies (Alchemists)</h4>
 <ul>
 <li>SH income is 4c, 4pw</li>
 <li>Start with 3/9/0 power</li>
 <li>Bloodstone converts 1vp to 2c. Standard 3c to 1vp applies.</li>
 </ul>
 
-
-<h4 id="fakers">Fakers</h4>
+<h4 id="fakers">Fakers (Fakirs)</h4>
 <ul>
 <li>Start with 1p</li>
 <li>Start with 5/7/0 power</li>
@@ -41,6 +40,20 @@ A note on <b>home terrain</b>: The concept of home terrain only applies to the o
 <li>Can upgrade digging twice</li>
 </ul>
 
+<h4 id="hobbits">Most Debauched Hobbits (Halflings)</h4> 
+<ul>
+<li>SH gives 1 instant spade and reveals ACTH, a single dig action.</li>
+</ul>
+
+<h4 id="neckbeards">Neckbeards (Engineers)</h4> 
+<ul>
+<li>D costs 1w+2c</li>
+<li>TP costs 2w+3c</li>
+<li>TE costs <b>1</b>w+5c</li>
+<li>SA costs 4w+6c</li>
+<li>SH costs 4w+6c</li>
+<li>1/1/1/1 on cults</li>
+</ul>
 
 <h4 id="succubi">Succubi (Auren)</h4> 
 <ul>

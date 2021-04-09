@@ -185,6 +185,21 @@ sub do_pass_vp {
         }            
     }
 
+     # XXX hack
+    if ($faction->{name} eq 'neckbeards' and
+        $faction->{buildings}{SH}{level}) {
+        my $color = 'gray';
+        for my $bridge (@{$game{bridges}}) {
+            if ($bridge->{color} eq $color and
+                $map{$bridge->{from}}{building} and
+                $map{$bridge->{from}}{color} eq $color and
+                $map{$bridge->{to}}{building} and
+                $map{$bridge->{to}}{color} eq $color) {
+                $fun->(3, 'SH');
+            }
+        }            
+    }
+
 }
 
 sub to_int {

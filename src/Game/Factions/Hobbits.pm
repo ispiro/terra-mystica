@@ -7,7 +7,6 @@ Readonly our $hobbits => {
     C => 15, W => 3, P1 => 3, P2 => 9,
     EARTH => 1, AIR => 1, color => 'brown',
     display => "Most Debauched Hobbits",
-    faction_board_id => 9,
     special => {
         mode => 'gain',
         SPADE => { VP => 1 }
@@ -35,9 +34,9 @@ Readonly our $hobbits => {
         TE => { advance_cost => { W => 2, C => 5 },
                 income => { P => [ 0, 1, 2, 3 ] } },
         SH => { advance_cost => { W => 4, C => 8 },
-                advance_gain => [ { SPADE => 3 } ],
+                advance_gain => [ { ACTH => 1,  SPADE => 1 } ],
                 subactions => {
-                    transform => 3,
+                    transform => 1,
                     build => 1,
                 },
                 income => { PW => [ 0, 2 ] } },
