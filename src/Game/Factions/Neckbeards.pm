@@ -4,7 +4,7 @@ use strict;
 use Readonly;
 
 Readonly our $neckbeards => {
-    C => 10, W => 3, P1 => 3, P2 => 9,
+    C => 15, W => 3, P1 => 3, P2 => 9,
     EARTH => 1, FIRE => 1, WATER => 1, AIR => 1, color => 'gray',
     display => "Neckbeards",
     ship => { 
@@ -23,8 +23,8 @@ Readonly our $neckbeards => {
     },
     ACTE => 1,
     buildings => {
-        D => { advance_cost => { W => 1, C => 2 },
-               income => { W => [ 1, 2, 3, 4, 5, 6, 7, 8, 8 ] } },
+        D => {  advance_cost => { W => 1, C => 2 },
+                income => { W => [ 1, 2, 3, 4, 5, 6, 7, 8, 8 ] } },
         TP => { advance_cost => { W => 2, C => 3 },
                 income => { C => [ 0, 2, 4, 6, 8 ],
                             PW => [ 0, 1, 2, 4, 6] } },
