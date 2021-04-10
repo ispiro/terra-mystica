@@ -47,12 +47,13 @@ A note on <b>home terrain</b>: The concept of home terrain only applies to the o
 
 <h4 id="neckbeards">Neckbeards (Engineers)</h4> 
 <ul>
-<li>D costs 1w+2c</li>
+<li>D costs 1w+2c. Income of 1w + 1w per D (up to 7D)</li>
 <li>TP costs 2w+3c</li>
-<li>TE costs <b>1</b>w+5c</li>
+<li>TE costs 1w+5c. Income of p/5pw/p (like Engineers) </li>
 <li>SA costs 4w+6c</li>
 <li>SH costs 4w+6c</li>
 <li>1/1/1/1 on cults</li>
+<li>Start with 3w+15c
 </ul>
 
 <h4 id="succubi">Succubi (Auren)</h4> 
