@@ -2244,13 +2244,13 @@ function addFactionInput(parent, record, index) {
         var row = new Element("tr"); table.insert(row);
         var cell1 = new Element("td", {"valign": "top"}); row.insert(cell1);
         var cell2 = new Element("td", {"valign": "top"}); row.insert(cell2);
-        var boards = { "green": ["witches", "succubi"],
+        var boards = { "green": ["auren","witches", "succubi"],
                        "blue": ["mermaids", "swarmlings"],
-                       "black": ["darklings","alkies"],
-                       "brown": ["hobbits", "cultists"], 
-                       "yellow": ["fakers", "nomads"],
-                       "red": ["chaosmagicians", "wastrels"],
-                       "gray": ["dwarves", "neckbeards"],
+                       "black": ["darklings","alkies","alchemists"],
+                       "brown": ["hobbits", "halflings","cultists"], 
+                       "yellow": ["fakers", "fakirs", "nomads"],
+                       "red": ["chaosmagicians", "giants", "wastrels"],
+                       "gray": ["dwarves", "neckbeards", "engineers"],
                        "ice": ["icemaidens", "yetis"],
                        "volcano": ["dragonlords", "acolytes"],
                        "variable": ["shapeshifters", "riverwalkers"],
